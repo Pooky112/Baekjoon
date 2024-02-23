@@ -15,15 +15,12 @@ def get_graph_L_water(R, C):
             if value == 'L':
                 L.append((r, c))
         graph.append(current_row)
-
     return graph, L, water
 
-def find_swan(graph, visited, queue):
-    next_queue= deque()
-    
+def find_swan(graph, visited, queue, L, R, C):
+    next_queue = deque()
     while queue:
         i, j = queue.popleft()
-        visited[i][j] = True
         if (i, j) == L[1]:
             return True, deque()
         for di, dj in [(-1,0), (1,0), (0,-1), (0,1)]:
@@ -36,17 +33,16 @@ def find_swan(graph, visited, queue):
                     queue.append((ni, nj))
     return False, next_queue
                 
-def melt_ice(water, lake):
-    to_be_melted = deque()
+def melt_ice(water, graph, R, C):
+    next_water = deque()
     while water:
         i, j = water.popleft()
-        for di, dj in [(-1,0), (1,0), (0, -1), (0, 1)]:
+        for di, dj in [(-1,0), (1,0), (0,-1), (0,1)]:
             ni, nj = i + di, j + dj
             if 0 <= ni < R and 0 <= nj < C and graph[ni][nj] == 'X':
-                graph[ni][nj] = '.'    
-                to_be_melted.append((ni, nj))
-                    
-    return to_be_melted
+                graph[ni][nj] = '.'
+                next_water.append((ni, nj))
+    return next_water
 
 R, C = map(int, input().split())
 graph, L, water = get_graph_L_water(R, C)
@@ -56,11 +52,11 @@ visited = [[False] * C for _ in range(R)]
 visited[L[0][0]][L[0][1]] = True
 
 while True:
-    found, next_queue = find_swan(graph, visited, queue)
+    found, next_queue = find_swan(graph, visited, queue, L, R, C)
     if found:
         break
-    queue = next_queue    
-    water = melt_ice(water, graph)
+    queue = next_queue
+    water = melt_ice(water, graph, R, C)
     days += 1
 
 print(days)
