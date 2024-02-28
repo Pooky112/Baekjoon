@@ -1,0 +1,16 @@
+def solution(n, control):
+    for char in control:
+        if char == "w":
+            n += 1
+        elif char == "s":
+            n += -1
+        elif char == "d":
+            n += 10
+        else:
+            n += -10
+    return n
+
+"""
+c = { 'w':1, 's':-1, 'd':10, 'a':-10}
+count
+"""
