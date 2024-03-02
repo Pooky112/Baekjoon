@@ -1,6 +1,8 @@
 def solution(my_string, is_suffix):
-    for i in range(len(my_string)):
-        if is_suffix == my_string[i:]:
-            return 1
-    else:
-        return 0
+    suffix = my_string[-len(is_suffix):]
+    
+    return 1 if suffix == is_suffix else 0
+"""
+def solution(my_string, is_suffix):
+    return int(my_string.endswith(is_suffix))
+"""
