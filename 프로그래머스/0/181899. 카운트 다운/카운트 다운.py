@@ -1,5 +1,2 @@
 def solution(start, end_num):
-    answer = list(range(end_num, start+1))
-    answer.reverse()
-    
-    return answer
+    return list(range(start, end_num -1, -1))
