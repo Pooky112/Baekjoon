@@ -8,3 +8,7 @@ def solution(num_list):
             else:
                 num = (num - 1) // 2
     return answer
+
+"""
+    return sum(len(bin(i)) - 3 for i in num_list)
+"""
