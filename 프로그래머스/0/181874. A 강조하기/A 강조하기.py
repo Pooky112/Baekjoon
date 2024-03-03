@@ -10,4 +10,5 @@ def solution(myString):
             
     return ans
     
+    "myString.lower().replace('a', 'A')"
     
