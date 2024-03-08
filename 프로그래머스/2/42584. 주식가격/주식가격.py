@@ -1,5 +1,5 @@
 def solution(prices):
-    
+    """
     stack = []
     answer = [0] * len(prices)
     for i in range(len(prices)):
@@ -12,6 +12,8 @@ def solution(prices):
         answer[i] = len(prices) - 1 - i
     return answer
     """
+    
+    """제일 느림
     answer = [0] * len(prices)
     
     
@@ -23,7 +25,7 @@ def solution(prices):
 
     return answer
     """
-"""
+
     answer = [0] * len(prices)
     stack = []
     
@@ -38,5 +40,4 @@ def solution(prices):
         answer[top] = len(prices) - 1 - top
     
     return answer
-    """
     
