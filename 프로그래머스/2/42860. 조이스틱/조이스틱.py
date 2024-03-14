@@ -7,12 +7,13 @@ def solution(name):
     #좌우
     length = len(name)
     leftright = length - 1
-    for i in range(length):
-        next = i + 1
-        while next < length and name[next] == "A":
-            next += 1
-        distance_to_next = min(i, length - next)
-        leftright = min(leftright, i + distance_to_next + length - next)
-    
+    if "A" in name:
+        for i in range(length):
+            nex = i + 1
+            while nex < length and name[nex] == "A":
+                nex += 1
+            distance_to_next = min(i, length - nex)
+            leftright = min(leftright, i + distance_to_next + length - nex)
+
     answer += leftright
     return answer
