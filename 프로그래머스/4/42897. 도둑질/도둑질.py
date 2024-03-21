@@ -23,16 +23,22 @@
     
 #     return max_val
         
-def solution(a):
-    x1, y1, z1 = a[0], a[1], a[0]+a[2]
-    x2, y2, z2 = 0, a[1], a[2]
-    for i in a[3:]:
-        x1, y1, z1 = y1, z1, max(x1, y1)+i
-        x2, y2, z2 = y2, z2, max(x2, y2)+i
-    return max(x1, y1, y2, z2)
+    
+def rob(money):
+    prev_max = 0
+    curr_max = 0
+    
+    for m in money:
+        prev_max, curr_max = curr_max, max(curr_max, prev_max + m)
 
+    return curr_max
+
+def solution(money):
+    #첫 번째 집을 터는 경우
+    max_first_house = rob(money[:-1])
+    #마지막 집을 터는 경우
+    max_last_house = rob(money[1:])    
     
-    
-    
+    return max(max_first_house, max_last_house)
         
     
