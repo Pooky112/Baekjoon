@@ -1,5 +1,5 @@
 def solution(n, times):
-    left, right = 1 , max(times) * n
+    left, right = min(times) * n//len(times) , max(times) * n
     while left < right:
         mid = (left + right) // 2
         people = sum(mid // time for time in times)
