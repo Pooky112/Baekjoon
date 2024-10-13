@@ -1,10 +1,10 @@
 # [level 0] 커피 심부름 - 181837 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181837) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181837?language=java) 
 
 ### 성능 요약
 
-메모리: 10.3 MB, 시간: 0.00 ms
+메모리: 90.2 MB, 시간: 9.20 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 03월 05일 14:45:59
+2024년 10월 14일 00:40:50
 
 ### 문제 설명
 
@@ -93,39 +93,22 @@
 <p>입출력 예 #1</p>
 
 <ul>
-<li><p>예제 1번의 입력을 표로 나타내면 다음과 같습니다.</p>
-<table class="table">
-        <thead><tr>
-<th>order[i]</th>
-<th>팀원의 적은 음료</th>
-<th>실제 주문 음료</th>
-</tr>
-</thead>
-        <tbody><tr>
-<td>"cafelatte"</td>
-<td>카페 라테</td>
-<td>차가운 카페 라테</td>
-</tr>
-<tr>
-<td>"americanoice"</td>
-<td>차가운 아메리카노</td>
-<td>차가운 아메리카노</td>
-</tr>
-<tr>
-<td>"hotcafelatte"</td>
-<td>따뜻한 카페 라테</td>
-<td>따뜻한 카페 라테</td>
-</tr>
-<tr>
-<td>"anything"</td>
-<td>아무거나</td>
-<td>차가운 아메리카노</td>
-</tr>
-</tbody>
-      </table>
-<p>철수는 차가운 아메리카노 2잔, 차가운 카페 라테 1잔, 따뜻한 카페 라테 1잔을 주문하게 되므로 결제 금액은 4500 × 2 + 5000 × 2 = 19000원입니다. 따라서 19000을 return 합니다.</p></li>
+<li>예제 1번의 입력을 표로 나타내면 다음과 같습니다.</li>
 </ul>
 
+<p>|order[i]|팀원의 적은 음료|실제 주문 음료|</p>
+
+<p>|---|---|---|</p>
+
+<p>|"cafelatte"|카페 라테|차가운 카페 라테|</p>
+
+<p>|"americanoice"|차가운 아메리카노|차가운 아메리카노|</p>
+
+<p>|"hotcafelatte"|따뜻한 카페 라테|따뜻한 카페 라테|</p>
+
+<p>|"anything"|아무거나|차가운 아메리카노|</p>
+<div class="highlight"><pre class="codehilite"><code>철수는 차가운 아메리카노 2잔, 차가운 카페 라테 1잔, 따뜻한 카페 라테 1잔을 주문하게 되므로 결제 금액은 4500 &amp;times; 2 + 5000 &amp;times; 2 = 19000원입니다. 따라서 19000을 return 합니다.
+</code></pre></div>
 <p>입출력 예 #2</p>
 
 <ul>
